@@ -5,9 +5,11 @@ import RestaurantInput from '../src/components/restaurants/RestaurantInput'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import manageRestaurant, { cuidFn } from '../src/reducers/manageRestaurant'
+
 import App from '../src/App'
 import Restaurant from '../src/components/restaurants/Restaurant'
 import Adapter from 'enzyme-adapter-react-16'
+
 
 configure({ adapter: new Adapter() })
 
@@ -37,10 +39,10 @@ describe('RestaurantInput', () => {
     let form = wrapper.find('form');
     let input = wrapper.find('input').first();
 
-    // console.log(store.getState());
+    console.log(store.getState());
     input.simulate('change', { target: { value: 'Hello', name: 'text', id: 'text' }});
     form.simulate('submit',  { preventDefault() {} })
-    // console.log(store.getState());
+    console.log(store.getState());
     expect(store.getState().restaurants[0].text).to.equal('Hello')
   });
 

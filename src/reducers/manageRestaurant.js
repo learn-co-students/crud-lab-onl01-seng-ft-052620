@@ -1,5 +1,11 @@
+import { combineReducers } from 'redux'
+import restaurantReducer from './restaurantReducer'
+import reviewReducer from './reviewReducer'
 import cuid from 'cuid';
 
-export default function manageRestaurants(state, action) {
+const manageRestaurant = combineReducers({
+  restaurants: restaurantReducer,
+  reviews: reviewReducer
+})
 
-}
+export default manageRestaurant
