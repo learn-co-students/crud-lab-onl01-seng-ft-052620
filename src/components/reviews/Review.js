@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 
 class Review extends Component {
 
-  render() {
-    const { review } = this.props;
+  handleOnClick = () => {
 
+    this.props.deleteReview(this.props.id)
+  }
+
+  render() {
+  // debugger
     return (
       <div>
         <li>
-          {review.text}
+          {this.props.text}
+        <button onClick={this.handleOnClick}> X </button>
         </li>
-        <button> X </button>
       </div>
     );
   }
@@ -18,3 +22,4 @@ class Review extends Component {
 };
 
 export default Review;
+      
