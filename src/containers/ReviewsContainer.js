@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReviewInput from '../components/reviews/ReviewInput';
 import Reviews from '../components/reviews/Reviews';
+import { connect } from 'react-redux'
 
 class ReviewsContainer extends Component {
 
@@ -13,5 +14,15 @@ class ReviewsContainer extends Component {
     )
   }
 }
+// const mapStateToProps = state => {
+//   return {
+//     xxx: state.xxx
+//   }
+// }
 
-export default ReviewsContainer;
+// const mapDispatchToProps = Dispatch => {
+//   return {
+//     xxx: x => dispatch({t})
+//   }
+// }
+export default connect()(ReviewsContainer)
