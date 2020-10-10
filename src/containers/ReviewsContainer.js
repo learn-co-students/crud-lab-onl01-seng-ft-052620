@@ -4,6 +4,11 @@ import Reviews from '../components/reviews/Reviews';
 import { connect } from 'react-redux'
 
 class ReviewsContainer extends Component {
+  state = {
+    text: "",
+    restaurantId: ""
+    id: ''
+  }
 
   render() {
     return (
