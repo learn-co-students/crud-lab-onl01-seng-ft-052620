@@ -9,7 +9,7 @@ render() {
     return (
       <div>
         <ReviewInput addReview={this.props.addReview} restaurantId={this.props.restaurant.id}/>
-        <Reviews reviews={this.props.reviews}/>
+        <Reviews reviews={this.props.reviews} restaurantId={this.props.restaurant.id} delete={this.props.delete} />
       </div>
     )
   }
@@ -19,7 +19,9 @@ const mapStateToProps = state => ({ reviews: state.reviews })
 
 const mapDispatchToProps = dispatch => {
   return {
-  addReview: review => dispatch({type: 'ADD_REVIEW', review})
+  addReview: review => dispatch({type: 'ADD_REVIEW', review}),
+  delete: id => dispatch({type: 'DELETE_REVIEW', id})
+
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer)
